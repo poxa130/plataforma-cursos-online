@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Area</title>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	<div class="login-area">
+        <h1>Login</h1>
+        <form action="curso.html" method="post" id="login-form">
+          <label for="username">Nome do Usuário:</label>
+          <input type="text" id="username" name="username"><br><br>
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password"><br><br>
+          <input type="submit" value="Conectar" id="submit-btn" disabled>
+        </form>
+        <p>Não tem uma conta? <a href="cadastro.html">Inscrever-se</a></p>
+      
+        <script>
+          const form = document.getElementById('login-form');
+          const usernameInput = document.getElementById('username');
+          const passwordInput = document.getElementById('password');
+          const submitBtn = document.getElementById('submit-btn');
+      
+          form.addEventListener('input', () => {
+            if (usernameInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+              submitBtn.disabled = false;
+            } else {
+              submitBtn.disabled = true;
+            }
+          });
+        </script>
+      </div>
+</body>
+</html>
